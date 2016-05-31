@@ -1,0 +1,12 @@
+INSERT INTO [dbo].[ChecklistContactInformation]
+           ([checkList_id]
+           ,[role_ID]
+           ,[name]
+           ,[email]
+           ,[org_position])
+     VALUES
+           (@checkList_id
+           ,@role_ID
+           ,@name
+           ,@email
+           ,@org_position)

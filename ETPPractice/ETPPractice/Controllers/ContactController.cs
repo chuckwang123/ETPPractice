@@ -29,8 +29,6 @@ namespace ETPPractice.Controllers
         }
 
         //GET: api/Contract
-        
-
         [Route("")]
         public IEnumerable<ContactInfo> GetContactRoles(int checkListId = -1)
         {
@@ -41,25 +39,46 @@ namespace ETPPractice.Controllers
             return responses;
         }
 
-        // GET: api/Contact/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
         // POST: api/Contact
-        public void Post([FromBody]string value)
+        [HttpPost, Route("")]
+        public void Post(ContactInfo info)
         {
+            string sqlQuery = _mDapperSql.GetsqlQuery("InsertContactInformation.txt");
+            _mDapperSql.Execute(_webconfig.RdssqlServerConnection, sqlQuery, new
+            {
+                info.checkList_id,
+                info.role_ID,
+                info.Name,
+                info.Email,
+                info.org_position
+            });
         }
 
         // PUT: api/Contact/5
-        public void Put(int id, [FromBody]string value)
+        [HttpPut, Route("{id:int}")]
+        public void Put(int id, ContactInfo info)
         {
+            string sqlQuery = _mDapperSql.GetsqlQuery("UpdateContactInformation.txt");
+            _mDapperSql.Execute(_webconfig.RdssqlServerConnection, sqlQuery, new
+            {
+                id,
+                info.checkList_id,
+                info.role_ID,
+                info.Name,
+                info.Email,
+                info.org_position
+            });
         }
 
         // DELETE: api/Contact/5
+        [HttpDelete, Route("{id:int}")]
         public void Delete(int id)
         {
+            string sqlQuery = _mDapperSql.GetsqlQuery("DeleteContactInformation.txt");
+            _mDapperSql.Execute(_webconfig.RdssqlServerConnection, sqlQuery, new
+            {
+                id
+            });
         }
     }
 }

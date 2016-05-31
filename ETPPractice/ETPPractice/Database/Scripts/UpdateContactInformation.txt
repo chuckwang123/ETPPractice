@@ -1,0 +1,7 @@
+UPDATE [dbo].[ChecklistContactInformation]
+   SET [checkList_id] = @checkList_id
+      ,[role_ID] = @role_ID
+      ,[name] = @name
+      ,[email] = @email
+      ,[org_position] = @org_position
+ WHERE id = @id
