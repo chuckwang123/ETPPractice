@@ -52,9 +52,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessImoServices.cs" />
     <Compile Include="BrowserJsonFormatter.cs" />
     <Compile Include="ContactCategoryInfo.cs" />
     <Compile Include="ContactInfo.cs" />
+    <Compile Include="ImoCategoryServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
