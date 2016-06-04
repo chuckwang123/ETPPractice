@@ -38,26 +38,45 @@ namespace ETPPractice.Controllers
             return responses;
         }
 
-        // GET: api/Service/5
-
-        public string Get(int id)
-        {
-            return "value";
-        }
-
         // POST: api/Service
-        public void Post([FromBody]string value)
+        [Route("")]
+        public void Post(AccessImoServices service)
         {
+            string sqlQuery = _mDapperSql.GetsqlQuery("InsertChecklistAccessIMOServices.txt");
+            _mDapperSql.Execute(_webconfig.RdssqlServerConnection, sqlQuery, new
+            {
+                service.Id,
+                service.checkList_id,
+                service.service_id,
+                service.validate_by,
+                service.access_date,
+                service.notes
+            });
         }
 
         // PUT: api/Service/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(AccessImoServices service)
         {
+            string sqlQuery = _mDapperSql.GetsqlQuery("UpdateChecklistAccessIMOServices.txt");
+            _mDapperSql.Execute(_webconfig.RdssqlServerConnection, sqlQuery, new
+            {
+                service.Id,
+                service.checkList_id,
+                service.service_id,
+                service.validate_by,
+                service.access_date,
+                service.notes
+            });
         }
 
         // DELETE: api/Service/5
         public void Delete(int id)
         {
+            string sqlQuery = _mDapperSql.GetsqlQuery("DeleteChecklistAccessIMOServices.txt");
+            _mDapperSql.Execute(_webconfig.RdssqlServerConnection, sqlQuery, new
+            {
+                id
+            });
         }
     }
 }

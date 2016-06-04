@@ -1,0 +1,7 @@
+UPDATE [dbo].[ChecklistAccessIMOServices]
+   SET [checkList_id] = @checkList_id
+      ,[service_id] = @service_id
+      ,[validate_by] = @validate_by
+      ,[access_date] = @access_date
+      ,[notes] = @notes
+ WHERE id = @id

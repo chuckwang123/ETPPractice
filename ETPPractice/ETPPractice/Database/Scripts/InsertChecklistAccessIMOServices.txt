@@ -1,0 +1,12 @@
+INSERT INTO [dbo].[ChecklistAccessIMOServices]
+           ([checkList_id]
+           ,[service_id]
+           ,[validate_by]
+           ,[access_date]
+           ,[notes])
+     VALUES
+           (@checkList_id
+           ,@service_id
+           ,@validate_by
+           ,@access_date
+           ,@notes)

@@ -9,17 +9,42 @@
     <br>
     <p id="Info"></p>
     <br>
-    <table id="RoleTable" class="table table-striped">
-        <thead>
-        <tr>
-            <th>Role</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Organization Position</th>
-        </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    <button class="btn btn-info btn-lg btn-block" type="button" data-toggle="collapse" data-target="#roleDiv" aria-expanded="false" aria-controls="collapseExample">
+        Role Section
+    </button>
+    <div class="collapse" id="roleDiv">
+        <table id="RoleTable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Role</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Organization Position</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+    </div>
+
+    <button class="btn btn-info btn-lg btn-block" type="button" data-toggle="collapse" data-target="#accessDiv" aria-expanded="false" aria-controls="collapseExample">
+        Access Section
+    </button>
+    <div class="collapse" id="accessDiv">
+        <table id="AccessTable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Service Name</th>
+                    <th>Validate By</th>
+                    <th>Access Date</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    
+    
     <button id="submit" type="button" class="btn btn-primary btn-block">Save</button>
 </div>
 
