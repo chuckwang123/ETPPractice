@@ -2,7 +2,7 @@ INSERT INTO [dbo].[Checklist_ChecklistDocumentation]
            ([checkList_id]
            ,[documentation_id]
            ,[reviewed_by]
-           ,[access_date]
+           ,[access_date])
      VALUES
            (@checkList_id
            ,@documentation_id

@@ -56,7 +56,7 @@ function AddDictionaryRow(item) {
 
 function AddDocumentationRow(item) {
     var newRowContent = "<tr id=" + item.Id + "><td>" + item.documentation_name + "</td><td><input type='text'' name='Reviewed_By'></td>" +
-        "<td>+" + item.media_format + "</td><td><input type='text'' name='Access_Date'></td>";
+        "<td>" + item.media_format + "</td><td><input type='text'' name='Access_Date'></td>";
     $("#documentationTable > tbody:last-child").append(newRowContent);
 }
 
@@ -88,7 +88,7 @@ $('#submit').click(function() {
     });
 
     $('#AccessTable > tbody  > tr').each(function () {
-        if ($(this).find('[name="name"]').val() === '') {
+        if ($(this).find('[name="Validate_By"]').val() === '') {
             return;
         }
         var accessInfo = {
@@ -113,7 +113,7 @@ $('#submit').click(function() {
     });
 
     $('#migrationTable > tbody  > tr').each(function () {
-        if ($(this).find('[name="name"]').val() === '') {
+        if ($(this).find('[name="IsSendFile"]').val() === '') {
             return;
         }
         var migrationInfo = {
@@ -139,7 +139,7 @@ $('#submit').click(function() {
     });
 
     $('#documentationTable > tbody  > tr').each(function () {
-        if ($(this).find('[name="name"]').val() === '') {
+        if ($(this).find('[name="Reviewed_By"]').val() === '') {
             return;
         }
         var documentationInfo = {
