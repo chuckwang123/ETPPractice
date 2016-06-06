@@ -1,0 +1,8 @@
+UPDATE [dbo].[ChecklistLTTMMigrationFiles]
+   SET   [checkList_id] = @checkList_id
+		,[dictionary_Id] = @dictionary_Id
+		,[isSendFile] = @isSendFile
+		,[Reason] = @Reason
+		,[reviewed_migration] = @reviewed_migration
+		,[export_info] = @export_info
+ WHERE id = @id

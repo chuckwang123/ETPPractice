@@ -1,0 +1,14 @@
+INSERT INTO [dbo].[ChecklistLTTMMigrationFiles]
+           ([checkList_id]
+            ,[dictionary_Id]
+            ,[isSendFile]
+            ,[Reason]
+            ,[reviewed_migration]
+            ,[export_info])
+     VALUES
+           (@checkList_id
+           ,@dictionary_Id
+           ,@isSendFile
+           ,@Reason
+           ,@reviewed_migration
+           ,@export_info)

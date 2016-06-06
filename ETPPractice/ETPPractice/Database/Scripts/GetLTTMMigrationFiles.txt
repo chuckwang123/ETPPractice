@@ -1,0 +1,8 @@
+SELECT [id]
+      ,[checkList_id]
+      ,[dictionary_Id]
+      ,[isSendFile]
+      ,[Reason]
+      ,[reviewed_migration]
+      ,[export_info]
+  FROM [junyuSQL].[dbo].[ChecklistLTTMMigrationFiles]

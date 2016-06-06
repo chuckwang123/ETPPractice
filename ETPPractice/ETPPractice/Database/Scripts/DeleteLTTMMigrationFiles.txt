@@ -1,0 +1,2 @@
+DELETE FROM [dbo].[ChecklistLTTMMigrationFiles]
+      WHERE id = @id

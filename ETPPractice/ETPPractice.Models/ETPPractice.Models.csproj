@@ -57,6 +57,8 @@
     <Compile Include="ContactCategoryInfo.cs" />
     <Compile Include="ContactInfo.cs" />
     <Compile Include="ImoCategoryServices.cs" />
+    <Compile Include="LttmDictionary.cs" />
+    <Compile Include="LttmMigrationFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
