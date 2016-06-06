@@ -56,12 +56,12 @@ namespace ETPPractice.Controllers
 
         // PUT: api/Contact/5
         [HttpPut, Route("{id:int}")]
-        public void Put(int id, ContactInfo info)
+        public void Put(ContactInfo info)
         {
             string sqlQuery = _mDapperSql.GetsqlQuery("UpdateContactInformation.txt");
             _mDapperSql.Execute(_webconfig.RdssqlServerConnection, sqlQuery, new
             {
-                id,
+                info.id,
                 info.checkList_id,
                 info.role_ID,
                 info.Name,

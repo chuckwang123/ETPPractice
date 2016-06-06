@@ -1,0 +1,6 @@
+UPDATE [dbo].[Checklist_ChecklistDocumentation]
+   SET [checkList_id] = @checkList_id
+      ,[documentation_id] = @documentation_id
+      ,[reviewed_by] = @reviewed_by
+      ,[access_date] = @access_date
+ WHERE id = @id'

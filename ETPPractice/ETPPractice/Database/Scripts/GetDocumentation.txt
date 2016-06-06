@@ -1,0 +1,5 @@
+SELECT [id]
+      ,[documentation_name]
+      ,[media_format]
+      ,[item_order]
+  FROM [junyuSQL].[dbo].[ChecklistDocumentation]

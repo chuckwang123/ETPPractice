@@ -1,0 +1,2 @@
+DELETE FROM [dbo].[Checklist_ChecklistDocumentation]
+      WHERE id = @id

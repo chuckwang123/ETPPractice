@@ -56,12 +56,12 @@ namespace ETPPractice.Controllers
 
         // PUT: api/Migration/5
         [HttpPut,Route("")]
-        public void Put(int id, LttmMigrationFile file)
+        public void Put(LttmMigrationFile file)
         {
             string sqlQuery = _mDapperSql.GetsqlQuery("UpdateLTTMMigrationFiles.txt");
             _mDapperSql.Execute(_webconfig.RdssqlServerConnection, sqlQuery, new
             {
-                id,
+                file.Id,
                 file.checkList_id,
                 file.dictionary_Id,
                 file.IsSendFile,

@@ -26,6 +26,14 @@ $(document).ready(function () {
                 AddDictionaryRow(item);
             });
         });
+
+    //load Documentation Table
+    $.getJSON(uri + '/Documentation/Category')
+        .done(function (data) {
+            $.each(data, function (key, item) {
+                AddDocumentationRow(item);
+            });
+        });
 });
 
 function AddRow(item) {
@@ -44,6 +52,12 @@ function AddDictionaryRow(item) {
     var newRowContent = "<tr id=" + item.Id + "><td>" + item.Dictionary + "</td><td><input type='text'' name='IsSendFile'></td>" +
         "<td><input type='text'' name='Reason'></td><td><input type='text'' name='reviewed_migration'></td><td><input type='text'' name='export_info'></td>";
     $("#migrationTable > tbody:last-child").append(newRowContent);
+}
+
+function AddDocumentationRow(item) {
+    var newRowContent = "<tr id=" + item.Id + "><td>" + item.documentation_name + "</td><td><input type='text'' name='Reviewed_By'></td>" +
+        "<td>+" + item.media_format + "</td><td><input type='text'' name='Access_Date'></td>";
+    $("#documentationTable > tbody:last-child").append(newRowContent);
 }
 
 $('#submit').click(function() {
@@ -121,6 +135,30 @@ $('#submit').click(function() {
                 $('#Info').text('It is done!!');
             },
             data: migrationInfo
+        });
+    });
+
+    $('#documentationTable > tbody  > tr').each(function () {
+        if ($(this).find('[name="name"]').val() === '') {
+            return;
+        }
+        var documentationInfo = {
+            checkList_id: 1,
+            documentation_id: $(this).attr('Id'),
+            reviewed_by: $(this).find('[name="Reviewed_By"]').val() === '' ? ' ' : $(this).find('[name="Reviewed_By"]').val(),
+            access_date: $(this).find('[name="Access_Date"]').val() === "" ? " " : $(this).find('[name="Access_Date"]').val()
+        };
+        $.ajax({
+            url: '/api/Documentation',
+            type: 'post',
+            dataType: 'json',
+            error: function (xhr) {
+                $('#Info').text(xhr.responseText);
+            },
+            success: function () {
+                $('#Info').text('It is done!!');
+            },
+            data: documentationInfo
         });
     });
 })

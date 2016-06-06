@@ -45,7 +45,6 @@ namespace ETPPractice.Controllers
             string sqlQuery = _mDapperSql.GetsqlQuery("InsertChecklistAccessIMOServices.txt");
             _mDapperSql.Execute(_webconfig.RdssqlServerConnection, sqlQuery, new
             {
-                service.Id,
                 service.checkList_id,
                 service.service_id,
                 service.validate_by,
