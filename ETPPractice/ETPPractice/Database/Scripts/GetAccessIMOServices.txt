@@ -4,4 +4,5 @@ SELECT [id]
       ,[validate_by]
       ,[access_date]
       ,[notes]
-  FROM [junyuSQL].[dbo].[ChecklistAccessIMOServices]
+FROM [etp].[dbo].[ChecklistAccessIMOServices]
+WHERE [checkList_id] = @checkList_id

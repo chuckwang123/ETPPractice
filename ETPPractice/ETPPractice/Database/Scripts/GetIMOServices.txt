@@ -1,4 +1,4 @@
 SELECT [id]
       ,[service_name]
       ,[item_order]
-  FROM [junyuSQL].[dbo].[ChecklistIMOService]
+  FROM [etp].[dbo].[ChecklistIMOService]

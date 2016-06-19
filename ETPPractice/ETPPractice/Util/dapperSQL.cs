@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
+using System.Linq;
 using System.Web.Hosting;
 using Dapper;
 
@@ -36,6 +37,20 @@ namespace ETPPractice.Util
 
                 sqlConnection.Close();
             }
+        }
+
+        public int ExecuteSingle(string connection, string sql, object parameter = null)
+        {
+            IEnumerable<int> response;
+            using (var sqlConnection = new SqlConnection(connection))
+            {
+                sqlConnection.Open();
+
+                response = sqlConnection.Query<int>(sql, parameter);
+
+                sqlConnection.Close();
+            }
+            return  response.Single();
         }
 
         public string GetsqlQuery(string fileName)

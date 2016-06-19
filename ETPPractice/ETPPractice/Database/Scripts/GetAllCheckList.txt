@@ -1,0 +1,7 @@
+SELECT [ChecklistId]
+      ,[CRMOpportunityId]
+      ,[OrganizationName]
+      ,[WebinarDateTime]
+      ,[AdditionalContactInfo]
+      ,[LTTMMarkAllYes]
+  FROM [dbo].[Checklist]

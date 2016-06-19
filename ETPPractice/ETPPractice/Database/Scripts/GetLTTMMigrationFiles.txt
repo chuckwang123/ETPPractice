@@ -5,4 +5,5 @@ SELECT [id]
       ,[Reason]
       ,[reviewed_migration]
       ,[export_info]
-  FROM [junyuSQL].[dbo].[ChecklistLTTMMigrationFiles]
+  FROM [etp].[dbo].[ChecklistLTTMMigrationFiles]
+  WHERE [checkList_id] = @checkList_id

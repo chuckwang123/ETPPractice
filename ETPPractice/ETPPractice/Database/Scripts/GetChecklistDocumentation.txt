@@ -3,4 +3,5 @@ SELECT [id]
       ,[documentation_id]
       ,[reviewed_by]
       ,[access_date]
-  FROM [junyuSQL].[dbo].[Checklist_ChecklistDocumentation]
+FROM [etp].[dbo].[Checklist_ChecklistDocumentation]
+WHERE [checkList_id] = @checkList_id

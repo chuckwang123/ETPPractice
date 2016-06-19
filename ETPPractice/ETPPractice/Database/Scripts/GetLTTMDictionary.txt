@@ -1,4 +1,4 @@
 SELECT [id]
       ,[dictionary]
       ,[item_order]
-  FROM [junyuSQL].[dbo].[ChecklistLTTMDictionary]
+  FROM [etp].[dbo].[ChecklistLTTMDictionary]

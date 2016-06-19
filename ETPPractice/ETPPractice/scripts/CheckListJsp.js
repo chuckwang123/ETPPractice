@@ -60,82 +60,59 @@ function AddDocumentationRow(item) {
     $("#documentationTable > tbody:last-child").append(newRowContent);
 }
 
-$('#submit').click(function() {
-    $('#RoleTable > tbody  > tr').each(function() {
+$("#submit").click(function () {
+    var date = new Date();
+    var checklist = {
+        CRMOpportunityId: uuid.v4(),
+        OrganizationName: "Test",
+        WebinarDateTime: date.toJSON(),
+        AdditionalContactInfo: "",
+        LTTMMarkAllYes: "false",
+        ContactInfos: [],
+        Documentations: [],
+        Serviceses: [],
+        Files: []
+    };
+
+    $("#RoleTable > tbody  > tr").each(function() {
         if ($(this).find('[name="name"]').val() === '') {
-            return ;
+            return;
         }
         var contactInfo = {
-            checkList_id: 1,
             role_ID: $(this).attr('Id'),
             Name: $(this).find('[name="name"]').val() === '' ? ' ' : $(this).find('[name="name"]').val(),
             Email: $(this).find('[name="email"]').val() === '' ? ' ' : $(this).find('[name="email"]').val(),
             org_position: $(this).find('[name="org_position"]').val() === '' ? ' ' : $(this).find('[name="org_position"]').val()
         };
-        $.ajax({
-            url: '/api/Contact',
-            type: 'post',
-            dataType: 'json',
-            error: function (xhr) {
-                $('#Info').text(xhr.responseText);
-            },
-            success: function () {
-                $('#Info').text('It is done!!');
-            },
-            
-            data: contactInfo
-        });
+
+        checklist.ContactInfos.push(contactInfo);
     });
 
-    $('#AccessTable > tbody  > tr').each(function () {
+    $("#AccessTable > tbody  > tr").each(function () {
         if ($(this).find('[name="Validate_By"]').val() === '') {
             return;
         }
         var accessInfo = {
-            checkList_id: 1,
             service_id: $(this).attr('Id'),
             validate_by: $(this).find('[name="Validate_By"]').val() === '' ? ' ' : $(this).find('[name="Validate_By"]').val(),
             access_date: $(this).find('[name="Access_Date"]').val() === "" ? " " : $(this).find('[name="Access_Date"]').val(),
             notes: $(this).find('[name="Notes"]').val() === '' ? ' ' : $(this).find('[name="Notes"]').val()
         };
-        $.ajax({
-            url: '/api/Service',
-            type: 'post',
-            dataType: 'json',
-            error: function (xhr) {
-                $('#Info').text(xhr.responseText);
-            },
-            success: function () {
-                $('#Info').text('It is done!!');
-            },
-            data: accessInfo
-        });
+        checklist.Serviceses.push(accessInfo);
     });
 
-    $('#migrationTable > tbody  > tr').each(function () {
+    $("#migrationTable > tbody  > tr").each(function () {
         if ($(this).find('[name="IsSendFile"]').val() === '') {
             return;
         }
         var migrationInfo = {
-            checkList_id: 1,
             dictionary_Id: $(this).attr('Id'),
             IsSendFile: $(this).find('[name="IsSendFile"]').val() === '' ? ' ' : $(this).find('[name="IsSendFile"]').val(),
             Reason: $(this).find('[name="Reason"]').val() === "" ? " " : $(this).find('[name="Reason"]').val(),
             reviewed_migration: $(this).find('[name="reviewed_migration"]').val() === '' ? ' ' : $(this).find('[name="reviewed_migration"]').val(),
             export_info: $(this).find('[name="export_info"]').val() === '' ? ' ' : $(this).find('[name="export_info"]').val()
         };
-        $.ajax({
-            url: '/api/migration',
-            type: 'post',
-            dataType: 'json',
-            error: function (xhr) {
-                $('#Info').text(xhr.responseText);
-            },
-            success: function () {
-                $('#Info').text('It is done!!');
-            },
-            data: migrationInfo
-        });
+        checklist.Files.push(migrationInfo);
     });
 
     $('#documentationTable > tbody  > tr').each(function () {
@@ -143,22 +120,23 @@ $('#submit').click(function() {
             return;
         }
         var documentationInfo = {
-            checkList_id: 1,
             documentation_id: $(this).attr('Id'),
             reviewed_by: $(this).find('[name="Reviewed_By"]').val() === '' ? ' ' : $(this).find('[name="Reviewed_By"]').val(),
             access_date: $(this).find('[name="Access_Date"]').val() === "" ? " " : $(this).find('[name="Access_Date"]').val()
         };
-        $.ajax({
-            url: '/api/Documentation',
-            type: 'post',
-            dataType: 'json',
-            error: function (xhr) {
-                $('#Info').text(xhr.responseText);
-            },
-            success: function () {
-                $('#Info').text('It is done!!');
-            },
-            data: documentationInfo
-        });
+        checklist.Documentations.push(documentationInfo);
+    });
+
+    $.ajax({
+        url: '/api/CheckList',
+        type: 'post',
+        dataType: 'json',
+        error: function (xhr) {
+            $('#Info').text(xhr.responseText);
+        },
+        success: function () {
+            $('#Info').text('It is done!!');
+        },
+        data: checklist
     });
 })

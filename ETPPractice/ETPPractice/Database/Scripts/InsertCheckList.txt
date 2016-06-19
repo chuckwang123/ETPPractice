@@ -1,0 +1,14 @@
+INSERT INTO [dbo].[Checklist]
+           ([CRMOpportunityId]
+           ,[OrganizationName]
+           ,[WebinarDateTime]
+           ,[AdditionalContactInfo]
+           ,[LTTMMarkAllYes])
+     VALUES
+           (@CRMOpportunityId
+           ,@OrganizationName
+           ,@WebinarDateTime
+           ,@AdditionalContactInfo
+           ,@LTTMMarkAllYes)
+
+SELECT CAST(SCOPE_IDENTITY() as int)
