@@ -43,7 +43,6 @@ D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\System.Net.Http.Formatting.d
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\System.Web.Http.dll
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\System.Web.Http.WebHost.dll
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\ETPPractice.Models.pdb
-D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Dapper.pdb
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Dapper.xml
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Microsoft.AI.DependencyCollector.xml
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Microsoft.AI.ServerTelemetryChannel.xml

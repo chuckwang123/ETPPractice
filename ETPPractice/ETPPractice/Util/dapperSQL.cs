@@ -57,9 +57,9 @@ namespace ETPPractice.Util
         {
             var sqlquery = "";
             // ReSharper disable once AssignNullToNotNullAttribute
-            using (StreamReader sr = new StreamReader(HostingEnvironment.MapPath(_mWebconfig.SqlQueryPath + fileName)))
+            using (var sr = new StreamReader(HostingEnvironment.MapPath(_mWebconfig.SqlQueryPath + fileName)))
             {
-                String line = sr.ReadToEnd();
+                var line = sr.ReadToEnd();
                 sqlquery = line.Replace(Environment.NewLine, "");
             }
             return sqlquery;

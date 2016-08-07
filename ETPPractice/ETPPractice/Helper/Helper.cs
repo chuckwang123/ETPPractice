@@ -15,7 +15,7 @@ namespace ETPPractice.Helper
             _mDapperSql = new DapperSql();
             _webconfig = new Webconfig();
         }
-
+        
         public IEnumerable<ContactInfo> GetContactRoles(int checkList_id = -1)
         {
             if (checkList_id < 0) throw new ArgumentOutOfRangeException(nameof(checkList_id));
