@@ -23,7 +23,7 @@ namespace ETPPractice.Controllers
         [Route("Roles")]
         public IEnumerable<ContactCategoryInfo> GetContactRoles()
         {
-            string sqlQuery = _mDapperSql.GetsqlQuery("GetContactRoles.txt");
+            var sqlQuery = _mDapperSql.GetsqlQuery("GetContactRoles.txt");
             var responses = _mDapperSql.Query<ContactCategoryInfo>(_webconfig.RdssqlServerConnection, sqlQuery);
             return responses;
         }
@@ -34,7 +34,7 @@ namespace ETPPractice.Controllers
         {
             if (checkListId < 0) throw new ArgumentOutOfRangeException(nameof(checkListId));
             
-            string sqlQuery = _mDapperSql.GetsqlQuery("GetContactInformation.txt");
+            var sqlQuery = _mDapperSql.GetsqlQuery("GetContactInformation.txt");
             var responses = _mDapperSql.Query<ContactInfo>(_webconfig.RdssqlServerConnection, sqlQuery, new {checkListId});
             return responses;
         }
@@ -43,7 +43,7 @@ namespace ETPPractice.Controllers
         [HttpPost, Route("")]
         public void Post(ContactInfo info)
         {
-            string sqlQuery = _mDapperSql.GetsqlQuery("InsertContactInformation.txt");
+            var sqlQuery = _mDapperSql.GetsqlQuery("InsertContactInformation.txt");
             _mDapperSql.Execute(_webconfig.RdssqlServerConnection, sqlQuery, new
             {
                 info.checkList_id,
