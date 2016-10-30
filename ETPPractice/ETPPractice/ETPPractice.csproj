@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="scripts\Checklist-AngularJS.js" />
     <Content Include="scripts\CheckListJsp.js" />
     <Content Include="Views\CheckList.html" />
     <Content Include="Web.config">

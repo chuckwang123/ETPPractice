@@ -1,28 +1,38 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app ="myApp">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <title>ETP CheckList</title>
 </head>
 <body>
 
-<div>
+<div <div class="container">>
     <br>
     <p id="Info"></p>
     <br>
     <button class="btn btn-info btn-lg btn-block" type="button" data-toggle="collapse" data-target="#roleDiv" aria-expanded="false" aria-controls="collapseExample">
         Role Section
     </button>
-    <div class="collapse" id="roleDiv">
+    <div class="collapse" id="roleDiv" ng-controller = "RoleCtrl">
         <table id="RoleTable" class="table table-striped">
             <thead>
-                <tr>
-                    <th>Role</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Organization Position</th>
-                </tr>
+            <tr>
+                <th>Role</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Organization Position</th>
+            </tr>
             </thead>
-            <tbody></tbody>
+            <tr ng-repeat="role in roles">
+                <td>{{ role.Id }}</td>
+                <td>{{ role.Role }}</td>
+                <td>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </td>
+                <td>
+                    <input class="form-control" type="text" placeholder="Organization Position" id="example-text-input">
+                </td>
+            </tr>
         </table>
 
     </div>
@@ -30,24 +40,35 @@
     <button class="btn btn-info btn-lg btn-block" type="button" data-toggle="collapse" data-target="#accessDiv" aria-expanded="false" aria-controls="collapseExample">
         Access Section
     </button>
-    <div class="collapse" id="accessDiv">
+    <div class="collapse" id="accessDiv" ng-controller = "AccessCtrl">
         <table id="AccessTable" class="table table-striped">
             <thead>
-                <tr>
-                    <th>Service Name</th>
-                    <th>Validate By</th>
-                    <th>Access Date</th>
-                    <th>Notes</th>
-                </tr>
+            <tr>
+                <th>Service Name</th>
+                <th>Validate By</th>
+                <th>Access Date</th>
+                <th>Notes</th>
+            </tr>
             </thead>
-            <tbody></tbody>
+            <tr ng-repeat="access in accesses">
+                <td>{{ access.Service_Name }}</td>
+                <td>
+                    <input type="text" class="form-control" id="ValidateBy" placeholder="Validate By">
+                </td>
+                <td>
+                    <input class="form-control" type="datetime-local" placeholder="Access Date" id="AccessDate">
+                </td>
+                <td>
+                    <input class="form-control" type="text" placeholder="Notes" id="Notes">
+                </td>
+            </tr>
         </table>
     </div>
-    
+
     <button class="btn btn-info btn-lg btn-block" type="button" data-toggle="collapse" data-target="#migrationDiv" aria-expanded="false" aria-controls="collapseExample">
         Migration Section
     </button>
-    <div class="collapse" id="migrationDiv">
+    <div class="collapse" id="migrationDiv" ng-controller = "MigrationCtrl">
         <table id="migrationTable" class="table table-striped">
             <thead>
             <tr>
@@ -58,39 +79,63 @@
                 <th>Export Info</th>
             </tr>
             </thead>
-            <tbody></tbody>
+            <tr ng-repeat="migration in migrations">
+                <td>{{ migration.Dictionary }}</td>
+                <td>
+                    <input type="radio" class="form-check-input" id="IsSendFile">
+                </td>
+                <td>
+                    <input class="form-control" type="text" placeholder="Reason" id="Reason">
+                </td>
+                <td>
+                    <input class="form-check-input" type="checkbox" placeholder="Reviewed Migration" id="ReviewedMigration">
+                </td>
+                <td>
+                    <input class="form-control" type="text" placeholder="Export Info" id="ExportInfo">
+                </td>
+            </tr>
         </table>
     </div>
 
     <button class="btn btn-info btn-lg btn-block" type="button" data-toggle="collapse" data-target="#documentationDiv" aria-expanded="false" aria-controls="collapseExample">
         Documentation Section
     </button>
-    <div class="collapse" id="documentationDiv">
+    <div class="collapse" id="documentationDiv" ng-controller = "DocumentationCtrl">
         <table id="documentationTable" class="table table-striped">
             <thead>
-                <tr>
-                    <th>Documentation Name</th>
-                    <th>Reviewed By</th>
-                    <th>Media Format</th>
-                    <th>Access Date</th>
-                </tr>
+            <tr>
+                <th>Documentation Name</th>
+                <th>Reviewed By</th>
+                <th>Media Format</th>
+                <th>Access Date</th>
+            </tr>
             </thead>
-            <tbody></tbody>
+            <tr ng-repeat="documentation in documentations">
+                <td>{{ documentation.documentation_name }}</td>
+                <td>
+                    <input class="form-control" type="text" placeholder="Reviewed By" id="ReviewedBy">
+                </td>
+                <td>{{ documentation.media_format }}</td>
+                <td>
+                    <input class="form-control" type="datetime-local" placeholder="Access Date" id="AccessDate">
+                </td>
+            </tr>
         </table>
     </div>
     <button id="submit" type="button" class="btn btn-primary btn-block">Save</button>
 </div>
 
-    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.7/uuid.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="../Scripts/CheckListJsp.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.7/uuid.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="../Scripts/Checklist-AngularJS.js"></script>
+<!--<script src="../Scripts/CheckListJsp.js"></script>-->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </body>
 </html>
