@@ -25,7 +25,7 @@ namespace ETPPractice.Controllers
         [Route("")]
         public IEnumerable<CheckList> Get()
         {
-            string sqlQuery = _mDapperSql.GetsqlQuery("GetAllCheckList.txt");
+            var sqlQuery = _mDapperSql.GetsqlQuery("GetAllCheckList.txt");
             var responses = _mDapperSql.Query<CheckList>(_webconfig.RdssqlServerConnection, sqlQuery);
             var checkLists = responses as IList<CheckList> ?? responses.ToList();
             foreach (var response in checkLists)
