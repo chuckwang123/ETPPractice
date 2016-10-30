@@ -96,11 +96,6 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="scripts\CheckListJsp.js" />
-    <None Include="scripts\jquery-3.1.1.intellisense.js" />
-    <Content Include="scripts\jquery-3.1.1.js" />
-    <Content Include="scripts\jquery-3.1.1.min.js" />
-    <Content Include="scripts\jquery-3.1.1.slim.js" />
-    <Content Include="scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="Views\CheckList.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -123,8 +118,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="scripts\jquery-3.1.1.slim.min.map" />
-    <Content Include="scripts\jquery-3.1.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
