@@ -1,4 +1,3 @@
-D:\Projects\ETPPractice\ETPPractice\ETPPractice.Tests\bin\Debug\ApplicationInsights.config
 D:\Projects\ETPPractice\ETPPractice\ETPPractice.Tests\bin\Debug\roslyn\csc.exe
 D:\Projects\ETPPractice\ETPPractice\ETPPractice.Tests\bin\Debug\roslyn\csc.exe.config
 D:\Projects\ETPPractice\ETPPractice\ETPPractice.Tests\bin\Debug\roslyn\csc.rsp

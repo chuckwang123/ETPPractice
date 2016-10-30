@@ -1,4 +1,3 @@
-D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\ApplicationInsights.config
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\roslyn\csc.exe
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\roslyn\csc.exe.config
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\roslyn\csc.rsp
@@ -30,12 +29,7 @@ D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\ETPPractice.dll
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\ETPPractice.pdb
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Dapper.dll
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\ETPPractice.Models.dll
-D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Microsoft.AI.Agent.Intercept.dll
-D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Microsoft.AI.DependencyCollector.dll
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Microsoft.AI.PerfCounterCollector.dll
-D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Microsoft.AI.ServerTelemetryChannel.dll
-D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Microsoft.AI.Web.dll
-D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Microsoft.AI.WindowsServer.dll
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Microsoft.ApplicationInsights.dll
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Newtonsoft.Json.dll
@@ -44,10 +38,6 @@ D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\System.Web.Http.dll
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\System.Web.Http.WebHost.dll
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\ETPPractice.Models.pdb
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Dapper.xml
-D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Microsoft.AI.DependencyCollector.xml
-D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Microsoft.AI.ServerTelemetryChannel.xml
-D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Microsoft.AI.Web.xml
-D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Microsoft.AI.WindowsServer.xml
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Microsoft.ApplicationInsights.xml
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Newtonsoft.Json.xml
