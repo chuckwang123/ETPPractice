@@ -8,8 +8,7 @@ namespace ETPPractice
         public static void Register(HttpConfiguration config)
         {
             config.MapHttpAttributeRoutes();
-            var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings;
-            config.Formatters.Insert(0, new BrowserJsonFormatter(json));
+            config.Formatters.Insert(0, new BrowserJsonFormatter(config.Formatters.JsonFormatter.SerializerSettings));
         }
     }
 }
