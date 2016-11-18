@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
-using Amazon.CloudWatchLogs;
-using Amazon.Runtime;
 using ETPPractice.Models;
 using ETPPractice.Util;
-using Serilog;
-using Serilog.Sinks.AwsCloudWatch;
 
 namespace ETPPractice.Controllers
 {
