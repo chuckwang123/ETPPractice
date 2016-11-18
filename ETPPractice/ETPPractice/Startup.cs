@@ -1,13 +1,8 @@
-﻿using System.IO;
-using System.Web.Http;
+﻿using System.Web.Http;
 using Amazon;
 using Amazon.CloudWatchLogs;
 using Amazon.Runtime;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.Owin;
 using Microsoft.Owin.Cors;
-using Microsoft.Owin.Logging;
 using Owin;
 using Serilog;
 using Serilog.Sinks.AwsCloudWatch;
