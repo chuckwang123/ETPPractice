@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
+using ETPPractice.Helper;
 using ETPPractice.Models;
 using ETPPractice.Util;
+using FluentValidation;
+using FluentValidation.Results;
+using Serilog;
 
 namespace ETPPractice.Controllers
 {
@@ -12,7 +17,7 @@ namespace ETPPractice.Controllers
     {
         private readonly DapperSql _mDapperSql;
         private readonly Webconfig _webconfig;
-
+        private readonly ContactInfoValidator _contactInfoValidator = new ContactInfoValidator();
         public ContactController()
         {
             _webconfig = new Webconfig();
@@ -25,18 +30,22 @@ namespace ETPPractice.Controllers
         {
             var sqlQuery = _mDapperSql.GetsqlQuery("GetContactRoles.txt");
             var responses = _mDapperSql.Query<ContactCategoryInfo>(_webconfig.RdssqlServerConnection, sqlQuery);
+            Log.Information("It's run here");
             return responses;
         }
 
         //GET: api/Contract
         [Route("")]
-        public IEnumerable<ContactInfo> GetContactRoles(int checkListId = -1)
+        public IEnumerable<ContactInfo> GetContactRoles(int checkList_id = -1)
         {
-            if (checkListId < 0) throw new ArgumentOutOfRangeException(nameof(checkListId));
+            if (checkList_id < 0) throw new ArgumentOutOfRangeException(nameof(checkList_id));
             
             var sqlQuery = _mDapperSql.GetsqlQuery("GetContactInformation.txt");
-            var responses = _mDapperSql.Query<ContactInfo>(_webconfig.RdssqlServerConnection, sqlQuery, new {checkListId});
-            return responses;
+            var responses = _mDapperSql.Query<ContactInfo>(_webconfig.RdssqlServerConnection, sqlQuery, new { checkList_id });
+            var contactInfos = responses as IList<ContactInfo> ?? responses.ToList();
+            var results = contactInfos.Select(response => _contactInfoValidator.Validate(response)).ToList();
+            var failures = results.Select(x=>x.Errors);
+            return contactInfos;
         }
 
         // POST: api/Contact
