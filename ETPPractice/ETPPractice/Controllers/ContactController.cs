@@ -5,8 +5,6 @@ using System.Web.Http;
 using ETPPractice.Helper;
 using ETPPractice.Models;
 using ETPPractice.Util;
-using FluentValidation;
-using FluentValidation.Results;
 using Serilog;
 
 namespace ETPPractice.Controllers
@@ -45,6 +43,10 @@ namespace ETPPractice.Controllers
             var contactInfos = responses as IList<ContactInfo> ?? responses.ToList();
             var results = contactInfos.Select(response => _contactInfoValidator.Validate(response)).ToList();
             var failures = results.Select(x=>x.Errors);
+            if (failures.Any())
+            {
+                //Log.Error();
+            }
             return contactInfos;
         }
 
