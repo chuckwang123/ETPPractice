@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Web.Http;
 using ETPPractice.Helper;
 using ETPPractice.Models;
@@ -16,6 +17,7 @@ namespace ETPPractice.Controllers
         private readonly DapperSql _mDapperSql;
         private readonly Webconfig _webconfig;
         private readonly ContactInfoValidator _contactInfoValidator = new ContactInfoValidator();
+        private string path = HttpContext.Current.Request.Url.AbsoluteUri;
         public ContactController()
         {
             _webconfig = new Webconfig();
@@ -28,7 +30,7 @@ namespace ETPPractice.Controllers
         {
             var sqlQuery = _mDapperSql.GetsqlQuery("GetContactRoles.txt");
             var responses = _mDapperSql.Query<ContactCategoryInfo>(_webconfig.RdssqlServerConnection, sqlQuery);
-            Log.Information("It's run here");
+            Log.Information("{path}，{@responses}", path, responses);
             return responses;
         }
 
@@ -47,6 +49,7 @@ namespace ETPPractice.Controllers
             {
                 //Log.Error();
             }
+            Log.Information("{path}，The request is {checkList_id}, and the response if {@responses}", path, checkList_id, responses);
             return contactInfos;
         }
 
