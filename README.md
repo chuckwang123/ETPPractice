@@ -20,6 +20,7 @@
 
 8, FluentValidation
 
+8, swagger && swagger UI
 ### HomePage:
 
 1, bootstrap table
