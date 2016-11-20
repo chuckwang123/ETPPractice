@@ -226,10 +226,6 @@ D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\zh-CN\FluentValidation.resou
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Serilog.Sinks.PeriodicBatching.dll
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Serilog.Sinks.PeriodicBatching.xml
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Microsoft.Web.Infrastructure.dll
-D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Swagger.Api.dll
-D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Swagger.Net.dll
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Swashbuckle.Core.dll
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\WebActivator.dll
 D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\WebActivatorEx.dll
-D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Swagger.Net.pdb
-D:\Projects\ETPPractice\ETPPractice\ETPPractice\bin\Swagger.Net.xml

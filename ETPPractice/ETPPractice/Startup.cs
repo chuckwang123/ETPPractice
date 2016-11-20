@@ -18,9 +18,11 @@ namespace ETPPractice
             var httpConfiguration = new HttpConfiguration();
             WebApiConfig.Register(httpConfiguration);
             httpConfiguration.EnsureInitialized();
-            httpConfiguration.EnableSwagger(c => c.SingleApiVersion("v1", "A title for your API"));
+            httpConfiguration.EnableSwagger(c => c.SingleApiVersion("v1", "ETP api"))
+                .EnableSwaggerUi();
+            
             app.UseCors(CorsOptions.AllowAll)
-                .UseWebApi(httpConfiguration);
+               .UseWebApi(httpConfiguration);
                 
 
             // name of the log group

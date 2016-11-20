@@ -152,16 +152,8 @@
       <HintPath>..\packages\Serilog.Sinks.Trace.2.1.0\lib\net45\Serilog.Sinks.Trace.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Swagger.Api, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Swagger.Api.1.0.0.1\lib\net45\Swagger.Api.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Swagger.Net, Version=0.5.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Swagger.Net.0.5.5\lib\net40\Swagger.Net.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Swashbuckle.Core.5.5.3\lib\net40\Swashbuckle.Core.dll</HintPath>
+      <HintPath>..\packages\Swashbuckle.Core.5.4.0\lib\net40\Swashbuckle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
@@ -215,28 +207,12 @@
   <ItemGroup>
     <Content Include="scripts\Checklist-AngularJS.js" />
     <Content Include="scripts\CheckListJsp.js" />
-    <Content Include="SwaggerUI\css\screen.css" />
-    <Content Include="SwaggerUI\images\pet_store_api.png" />
-    <Content Include="SwaggerUI\images\wordnik_api.png" />
-    <Content Include="SwaggerUI\index.html" />
-    <Content Include="SwaggerUI\lib\backbone-min.js" />
-    <Content Include="SwaggerUI\lib\handlebars.runtime-1.0.0.beta.6.js" />
-    <Content Include="SwaggerUI\lib\jquery.ba-bbq.min.js" />
-    <Content Include="SwaggerUI\lib\jquery.min.js" />
-    <Content Include="SwaggerUI\lib\jquery.slideto.min.js" />
-    <Content Include="SwaggerUI\lib\jquery.wiggle.min.js" />
-    <Content Include="SwaggerUI\lib\swagger.js" />
-    <Content Include="SwaggerUI\lib\underscore-min.js" />
-    <Content Include="SwaggerUI\swagger-ui.js" />
-    <Content Include="SwaggerUI\swagger-ui.min.js" />
     <Content Include="Views\CheckList.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\SwaggerConfig.cs" />
-    <Compile Include="App_Start\SwaggerNet.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CheckListController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -254,7 +230,6 @@
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="SwaggerUI\lib\.DS_Store" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
