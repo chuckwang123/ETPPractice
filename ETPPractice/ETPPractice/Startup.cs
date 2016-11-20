@@ -6,6 +6,7 @@ using Microsoft.Owin.Cors;
 using Owin;
 using Serilog;
 using Serilog.Sinks.AwsCloudWatch;
+using Swashbuckle.Application;
 using LoggerFactory = Microsoft.Extensions.Logging.LoggerFactory;
 
 namespace ETPPractice
@@ -17,8 +18,10 @@ namespace ETPPractice
             var httpConfiguration = new HttpConfiguration();
             WebApiConfig.Register(httpConfiguration);
             httpConfiguration.EnsureInitialized();
-            app.UseCors(CorsOptions.AllowAll);
-            app.UseWebApi(httpConfiguration);
+            httpConfiguration.EnableSwagger(c => c.SingleApiVersion("v1", "A title for your API"));
+            app.UseCors(CorsOptions.AllowAll)
+                .UseWebApi(httpConfiguration);
+                
 
             // name of the log group
             var logGroupName = "myLogGroup/Logs";
